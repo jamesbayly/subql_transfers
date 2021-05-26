@@ -1,0 +1,12 @@
+type Account @entity {
+  id: ID!
+  sentTransfers: [Transfer] @derivedFrom(field: "from")
+  recievedTransfers: [Transfer] @derivedFrom(field: "to")
+}
+
+type Transfer @entity {
+  id: ID!
+  amount: BigInt
+  to: Account!
+  from: Account!
+}
