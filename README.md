@@ -1,8 +1,7 @@
-# SubQuery - Starter Package
+# SubQuery - Transactions List
 
 
-The Starter Package is an example that you can use as a starting point for developing your SubQuery project.
-A SubQuery package defines which data The SubQuery will index from the Substrate blockchain, and how it will store it. 
+This simple SubQuery lists all transactions for a given account 
 
 ## Preparation
 
@@ -89,15 +88,25 @@ Finally, you should see a GraphQL playground is showing in the explorer and the 
 For the `subql-starter` project, you can try to query with the following code to get a taste of how it works.
 
 ````graphql
-{
-  query{
-    starterEntities(first:10){
-      nodes{
-        field1,
-        field2,
-        field3
-      }
+query {
+    accounts (first: 5) {
+        nodes {
+            id
+            sentTransfers (first: 5 orderBy: CREATED_AT_DESC) {
+            	nodes {
+                id
+                amount
+                toId
+              }
+          }
+          recievedTransfers (first: 5 orderBy: CREATED_AT_DESC) {
+            	nodes {
+                id
+                amount
+                fromId
+              }
+          }
+        }
     }
-  }
 }
 ````
