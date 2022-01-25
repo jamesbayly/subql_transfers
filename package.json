@@ -1,5 +1,5 @@
 {
-  "name": "accountcreation",
+  "name": "SubQuery-Transfers",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
@@ -7,10 +7,11 @@
     "build": "tsc -b",
     "prepack": "rm -rf dist && npm build",
     "test": "jest",
-    "codegen": "./node_modules/.bin/subql codegen"
+    "codegen": "./node_modules/.bin/subql codegen",
+    "start:docker": "docker-compose pull && docker-compose up --remove-orphans"
   },
-  "homepage": "https://github.com/subquery/subql-starter",
-  "repository": "github:subquery/subql-starter",
+  "homepage": "https://github.com/jamesbayly/subql_transfers",
+  "repository": "github:jamesbayly/subql_transfers",
   "files": [
     "dist",
     "schema.graphql",
@@ -19,9 +20,9 @@
   "author": "James",
   "license": "Apache-2.0",
   "devDependencies": {
-    "@polkadot/api": "5.5.2",
-    "@subql/types": "^0.8.2",
+    "@polkadot/api": "^7",
+    "@subql/types": "latest",
     "typescript": "^4.1.3",
-    "@subql/cli": "^0.11.1"
+    "@subql/cli": "latest"
   }
 }
