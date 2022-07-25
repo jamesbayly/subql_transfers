@@ -1,7 +1,6 @@
 # SubQuery - Transactions List
 
-
-This simple SubQuery lists all transactions for a given account 
+This simple SubQuery lists all transactions for a given account, try it out on our [Explorer](https://explorer.subquery.network/subquery/jamesbayly/transaction-list)
 
 ## Preparation
 
@@ -86,6 +85,8 @@ Open your browser and head to `http://localhost:3000`.
 Finally, you should see a GraphQL playground is showing in the explorer and the schemas that ready to query.
 
 For the `subql-starter` project, you can try to query with the following code to get a taste of how it works.
+
+Try it out on our [Explorer](https://explorer.subquery.network/subquery/jamesbayly/transaction-list)
 
 ````graphql
 query {
