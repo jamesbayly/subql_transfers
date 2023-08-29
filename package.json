@@ -1,5 +1,5 @@
 {
-  "name": "SubQuery-Transfers",
+  "name": "subquery-transfers",
   "version": "1.0.0",
   "description": "This simple SubQuery lists all transactions for a given account",
   "main": "dist/index.js",

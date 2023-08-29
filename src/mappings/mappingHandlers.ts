@@ -29,12 +29,12 @@ export async function handleTransfer(event: SubstrateEvent): Promise<void> {
   }
 
   // Create the new transfer entity
-  const transfer = new Transfer(
-    `${event.block.block.header.number.toNumber()}-${event.idx}`
-  );
-  transfer.blockNumber = event.block.block.header.number.toBigInt();
-  transfer.fromId = from.toString().toLowerCase();
-  transfer.toId = to.toString().toLowerCase();
-  transfer.amount = (amount as Balance).toBigInt();
+  const transfer = Transfer.create({
+    id: `${event.block.block.header.number.toNumber()}-${event.idx}`,
+    blockNumber: event.block.block.header.number.toBigInt(),
+    fromId: from.toString().toLowerCase(),
+    toId: to.toString().toLowerCase(),
+    amount: (amount as Balance).toBigInt(),
+  });
   await transfer.save();
 }
